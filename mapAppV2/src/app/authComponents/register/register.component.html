@@ -1,0 +1,80 @@
+<div class="d-flex justify-content-center">
+    <div class="card" style="width: 20rem;">
+           <div class="card-body">
+           <h5 class="card-title" style="text-align: center;">Register</h5>
+           <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+               <input type="text" formControlName="username" class="form-control mb-3 mt-5" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+               <input type="password" formControlName="password" class="form-control mb-3 " placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+               <input type="password" formControlName="confirmPassword" class="form-control mb-5" placeholder="Confirm password" aria-label="Password" aria-describedby="basic-addon1">               
+               <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">S'inscrire</button>
+           </form>
+           </div>
+    </div>
+</div>
+
+
+<!-- 
+<div class="register-container">
+  <h2>Inscription</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Nom d'utilisateur</label>
+      <input id="username" formControlName="username" />
+      @if( registerForm.controls['username'].invalid && registerForm.controls['username'].touched){
+            <div>
+            @if(registerForm.controls['username'].hasError('required')){
+                <small class="error" >Le nom d'utilisateur est requis.</small>
+            }
+            @if(registerForm.controls['username'].hasError('minlength')){
+                <small class="error">Le nom d'utilisateur doit contenir au moins 3 caractères.</small>
+            }
+        </div>
+      }
+    </div>
+    
+
+    <div>
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" formControlName="password" />
+      @if(registerForm.controls['password'].invalid && registerForm.controls['password'].touched){
+        <div>
+            @if(registerForm.controls['password'].hasError('required')){
+                <small class="error" >Le mot de passe est requis.</small>
+            }
+            @if(registerForm.controls['password'].hasError('minlength')){
+                <small class="error" >Le mot de passe doit contenir au moins 6 caractères.</small>
+            }
+        </div>
+       }
+    </div>
+
+    <div>
+        <label for="confirmPassword">Mot de passe</label>
+        <input type="password" id="confirmPassword" formControlName="confirmPassword" />
+        @if(registerForm.controls['confirmPassword'].invalid && registerForm.controls['password'].touched){
+          <div>
+              @if(registerForm.controls['confirmPassword'].hasError('required')){
+                  <small class="error" >Le mot de passe est requis.</small>
+              }
+              @if(registerForm.controls['confirmPassword'].hasError('minlength')){
+                  <small class="error" >Le mot de passe doit contenir au moins 6 caractères.</small>
+              }
+          </div>
+         }
+      </div>
+
+      @if(errorMessage){
+    <div class="error-message">
+      <p>{{ errorMessage }}</p>
+    </div>
+    }
+    @if(registerForm.invalid){
+      <div class="error-message">
+        <p>Les champs ne peuvent pas être vides.</p>
+      </div>
+    }@else{
+        <button type="submit">Inscription</button>
+    }
+    
+  </form>
+</div> -->

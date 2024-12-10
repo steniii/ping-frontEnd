@@ -1,0 +1,17 @@
+google-map {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+}
+
+.map.visible {
+    opacity: 1;
+}

@@ -1,0 +1,41 @@
+<div 
+  class="modal fade"
+  [class.show]="isOnCreateMode"
+  [style.display]="isOnCreateMode ? 'block' : 'none'"
+  tabindex="-1"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Ajouter un Ping</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          (click)="closeForm()"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onSubmit()" #form="ngForm" enctype="multipart/form-data">  
+            <div class="mb-3">
+                <!-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label> -->
+                <textarea class="form-control" id="description" rows="10" [(ngModel)]="description" name="description"></textarea>
+            </div>
+            <div class="form-text" id="basic-addon4" style="padding: 10px;">Astuce : précedez un mot d'un # pour le lier avec un tag!</div>
+        
+            <div class="input-group mb-3">
+                <input #fileInput type="file" class="form-control form-control-sm" id="image" (change)="onFileSelected($event)">
+            </div>  
+          
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeForm()">Annuler</button>
+        <button type="submit" class="btn btn-primary">Poster</button>
+     </div>
+     </form>  
+
+    
+    </div>
+  </div>
+</div>

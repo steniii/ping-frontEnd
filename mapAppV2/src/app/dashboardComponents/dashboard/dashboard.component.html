@@ -1,0 +1,14 @@
+<div class="dashboard-container">
+    <app-add-ping-form [newPosition]="newPositionForm" [isOnCreateMode]="isOnCreateMode" (closeFormEvent)="onNavigateMode()"></app-add-ping-form>
+    <div class="left-container" max-width="400px">
+        <app-items (clickItemSelection)="onItemsClick($event)"> </app-items>
+    </div>
+    <div class="center-container">
+        <app-map [mapCenter]="mapCenter" (clickCreatePing)="onCreateMode($event)"></app-map>
+        
+    </div>
+    <div class="right-container">
+        <!-- <button class="btn btn-primary" (click)="logOut()">Log out</button> -->
+    </div>
+</div>
+

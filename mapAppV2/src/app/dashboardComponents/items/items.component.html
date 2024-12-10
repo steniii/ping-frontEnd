@@ -1,0 +1,16 @@
+<div class="items-container">
+@for(localisation of localisations; track localisation.id){
+    <div class="card" type="button" (click)="onClick(localisation)">
+        <div class="card-body">
+            <h5 class="card-title">{{localisation.description}}</h5>
+            <p class="card-text">
+                <span class="localisation-date">{{localisation.creator_id}}</span>
+            </p>
+            <p class="card-text">
+                <span class="localisation-latitude">{{localisation.lattitude}}</span>
+                <span class="localisation-longitude">{{localisation.longitude}}</span>
+            </p>
+        </div>
+    </div>
+}
+</div>
